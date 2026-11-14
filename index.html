@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6810c8">
+  <title>Área do Professor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="ribbon ribbon-top" aria-hidden="true"></div>
+    <div class="ribbon ribbon-bottom" aria-hidden="true"></div>
+
+    <section class="login-layout" id="loginView">
+      <div class="teacher-side">
+        <span class="decor decor-books" aria-hidden="true">📚</span>
+        <span class="decor decor-star" aria-hidden="true">✦</span>
+        <div class="teacher-glow" aria-hidden="true"></div>
+        <img class="teacher-avatar" src="assets/img/professora-avatar.png" alt="Professora sorridente segurando livros">
+        <div class="teacher-caption">
+          <span>EDUCAÇÃO TRANSFORMA</span>
+          <strong>Conhecimento que inspira.</strong>
+        </div>
+      </div>
+
+      <section class="login-card" aria-labelledby="pageTitle">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 180 112">
+            <path d="M14 27 88 42v58L14 83z" fill="#8bc34a" stroke="#6c1bc5" stroke-width="5" stroke-linejoin="round"/>
+            <path d="m166 27-78 15v58l78-17z" fill="#ffc928" stroke="#6c1bc5" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M88 42v58" stroke="#6c1bc5" stroke-width="5"/>
+            <path d="M28 19 88 31l60-12" fill="none" stroke="#f28b20" stroke-width="8" stroke-linecap="round"/>
+            <path d="M57 7h62l-9 18H66z" fill="#3157d5"/>
+            <path d="M68 24v13m40-13v13" stroke="#3157d5" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="eyebrow">SEU ESPAÇO DE APRENDIZAGEM</p>
+        <h1 id="pageTitle">Área do Professor</h1>
+        <div class="title-underline"></div>
+        <p class="intro">Acesse sua área para continuar fazendo a diferença.</p>
+
+        <form id="loginForm" novalidate>
+          <label class="field">
+            <span class="field-icon" aria-hidden="true">♙</span>
+            <input id="username" name="username" type="text" placeholder="Nome" autocomplete="username" required>
+          </label>
+          <label class="field">
+            <span class="field-icon" aria-hidden="true">♙</span>
+            <input id="password" name="password" type="password" placeholder="Senha" autocomplete="current-password" required>
+            <button class="toggle-password" id="togglePassword" type="button" aria-label="Mostrar senha">◉</button>
+          </label>
+          <button class="login-button" type="submit">
+            <span aria-hidden="true">↪</span> Entrar
+          </button>
+          <p class="feedback" id="feedback" role="alert" aria-live="polite"></p>
+        </form>
+        <p class="demo-hint">Acesso demonstrativo: <strong>professora</strong> / <strong>123456</strong></p>
+        <div class="book-swoosh" aria-hidden="true"><span></span><span></span></div>
+      </section>
+    </section>
+
+    <section class="result-screen error-screen" id="errorView" hidden aria-live="assertive">
+      <div class="result-card">
+        <div class="grade zero-grade"><span>0</span><i></i></div>
+        <p class="result-label">RESPOSTA INCORRETA</p>
+        <h2>Ops! Essa questão não foi dessa vez.</h2>
+        <p>Confira seu nome e sua senha e tente novamente!</p>
+        <button class="secondary-button" id="tryAgain" type="button">Tentar novamente</button>
+      </div>
+    </section>
+
+    <section class="result-screen success-screen" id="successView" hidden aria-live="polite">
+      <div class="result-card">
+        <div class="grade ten-grade">10</div>
+        <p class="result-label">RESPOSTA CORRETA!</p>
+        <h2>Parabéns!</h2>
+        <p>Login realizado com sucesso.</p>
+        <div class="loading-track"><span></span></div>
+      </div>
+    </section>
+
+    <section class="welcome-screen" id="welcomeView" hidden>
+      <div class="welcome-card">
+        <div class="welcome-medal" aria-hidden="true">🎓</div>
+        <p class="eyebrow">ÁREA DO PROFESSOR</p>
+        <h2>Seja bem-vindo(a)!</h2>
+        <p class="welcome-phrase">Seu esforço e conhecimento transformam o futuro.</p>
+        <button class="login-button" id="enterPanel" type="button">Entrar no painel <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="dashboard-screen" id="dashboardView" hidden>
+      <div class="welcome-card">
+        <div class="welcome-medal" aria-hidden="true">🎓</div>
+        <p class="eyebrow">ÁREA DO PROFESSOR</p>
+        <h2>Painel do Professor</h2>
+        <p class="welcome-phrase">Seu ambiente de trabalho será desenvolvido na próxima etapa.</p>
+        <button class="secondary-button" id="backLogin" type="button">Voltar ao login</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
