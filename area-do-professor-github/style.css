@@ -1,0 +1,43 @@
+*{box-sizing:border-box}
+:root{--purple:#6810c8;--purple-dark:#3e078d;--yellow:#ffc928;--orange:#f28b20;--ink:#29105f;--muted:#77728b;--green:#20ad54;--red:#e33b45}
+html,body{min-height:100%;margin:0}
+body{font-family:"Nunito",system-ui,sans-serif;color:var(--ink);background:#fff9ff}
+button,input{font:inherit}button{cursor:pointer}[hidden]{display:none!important}
+.app-shell{min-height:100vh;position:relative;overflow:hidden;isolation:isolate;display:grid;place-items:center;padding:42px clamp(18px,5vw,76px);background:radial-gradient(circle at 15% 60%,#f3dafa 0 14%,transparent 35%),radial-gradient(circle at 82% 20%,#f6e7ff 0 12%,transparent 36%),linear-gradient(135deg,#fffdfb,#fff7fc 58%,#fffaf0);transition:background .4s}
+.ribbon{position:absolute;z-index:-1;pointer-events:none}.ribbon-top{width:65vw;height:190px;top:-112px;right:-8vw;transform:rotate(-12deg);border-radius:0 0 60% 60%;background:linear-gradient(100deg,var(--yellow),#ff9d23 35%,#9b28e9 36%,#6c0acb)}
+.ribbon-bottom{width:75vw;height:115px;bottom:-75px;left:-8vw;transform:rotate(-5deg);border-radius:50%;background:linear-gradient(90deg,#9b22e9,#6c0acb 48%,#ffb51b 49%,#ffd33b)}
+.login-layout{width:min(1240px,100%);display:grid;grid-template-columns:minmax(280px,.88fr) minmax(420px,1.12fr);align-items:center;gap:clamp(20px,4vw,58px)}
+.teacher-side{min-height:660px;position:relative;display:flex;align-items:end;justify-content:center}
+.teacher-glow{position:absolute;width:82%;height:68%;bottom:7%;border-radius:48% 52% 28% 35%;background:linear-gradient(145deg,#f5d7ff,#fbe8bb);z-index:-1}
+.teacher-avatar{display:block;width:min(100%,480px);max-height:690px;object-fit:contain;object-position:bottom;filter:drop-shadow(0 18px 22px #4d24752b)}
+.decor{position:absolute;z-index:2;color:#f3a900}.decor-books{top:13%;left:4%;font-size:50px;transform:rotate(-12deg)}.decor-star{top:27%;right:5%;font-size:48px}
+.teacher-caption{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:max-content;max-width:95%;text-align:center;display:grid;z-index:3}.teacher-caption span{font-size:11px;letter-spacing:.2em;font-weight:900;color:#8a42c5}.teacher-caption strong{font-size:clamp(16px,1.8vw,22px);color:#3d176f}
+.login-card{position:relative;overflow:hidden;padding:clamp(30px,4vw,54px) clamp(25px,4vw,62px) 42px;border:1px solid #fff;border-radius:34px;background:rgba(255,255,255,.93);box-shadow:0 24px 70px #57208020,0 4px 14px #3f17620d;text-align:center}
+.brand-icon{width:132px;margin:0 auto}.brand-icon svg{width:100%}.eyebrow{margin:4px 0 3px;font-size:10px;font-weight:900;letter-spacing:.19em;color:#9b6ac2}
+h1{margin:0;font-size:clamp(31px,3.4vw,47px);line-height:1.15;color:#42108f;font-weight:900}.title-underline{width:48%;height:9px;margin:14px auto 13px;border-radius:100%;border-bottom:7px solid var(--yellow);transform:rotate(-1deg)}
+.intro{margin:0 0 26px;color:var(--muted);font-size:14px}#loginForm{display:grid;gap:17px}
+.field{min-height:66px;display:flex;align-items:center;gap:14px;padding:0 18px;border:2px solid #ded7eb;border-radius:19px;background:#fff;box-shadow:0 4px 9px #3e176215;transition:.2s}
+.field:focus-within{border-color:#9b4be1;box-shadow:0 0 0 4px #a84ce21a;transform:translateY(-1px)}
+.field-icon{width:27px;flex:0 0 auto;color:#4b1b99;font-size:28px;line-height:1}
+.field input{min-width:0;width:100%;border:0;outline:0;color:#30244e;background:transparent;font-size:20px;font-weight:700}.field input::placeholder{color:#858095;font-weight:600}
+.toggle-password{border:0;background:transparent;color:#77728b;font-size:25px}
+.login-button{min-height:65px;display:inline-flex;align-items:center;justify-content:center;gap:13px;border:0;border-radius:18px;color:#fff;font-size:23px;font-weight:900;background:linear-gradient(100deg,#8e0ce0,#5700b8);box-shadow:0 8px 18px #6810c84a,inset 0 1px #ffffff55;transition:transform .2s,box-shadow .2s}
+.login-button:hover{transform:translateY(-2px);box-shadow:0 12px 22px #6810c855}.login-button:active{transform:translateY(1px)}
+.feedback{min-height:0;margin:-5px 0 0;color:var(--red);font-size:13px;font-weight:800}.feedback:empty{display:none}
+.demo-hint{margin:18px 0 0;color:#9992a7;font-size:11px}.book-swoosh{display:flex;justify-content:center;width:210px;height:23px;margin:24px auto 0}.book-swoosh span{width:50%;height:18px;border-top:5px solid #7620d1;border-radius:100% 0 0 0;transform:skewY(-7deg)}.book-swoosh span+span{border-color:#f5a900;border-radius:0 100% 0 0;transform:skewY(7deg)}
+.result-screen,.welcome-screen,.dashboard-screen{width:min(100%,760px);text-align:center;animation:fade-in .4s ease both}.result-card,.welcome-card{padding:clamp(34px,6vw,64px);border-radius:32px;background:#fff;box-shadow:0 24px 70px #30104b22}
+.grade{position:relative;width:180px;height:180px;margin:0 auto 20px;display:grid;place-items:center;border-radius:50%;font-size:112px;line-height:1;font-weight:900;animation:pop .65s cubic-bezier(.2,1.5,.5,1) both}
+.zero-grade{color:#d92236;background:#ffe3e5;border:8px solid #ffb7bd}.zero-grade i{position:absolute;width:132px;height:12px;border-radius:10px;background:#e52c3e;transform:rotate(-42deg);box-shadow:0 3px 0 #a80c20}
+.ten-grade{color:#168d43;background:#dff9e8;border:8px solid #a8e9bd;box-shadow:0 0 35px #39c96a35}
+.result-label{margin:8px 0;font-size:12px;letter-spacing:.2em;font-weight:900}.result-card h2,.welcome-card h2{margin:8px 0;font-size:clamp(28px,5vw,42px);font-weight:900}.result-card p:not(.result-label){color:#706981;font-size:17px}
+.error-screen .result-card{border:2px solid #ffc4c8}.error-screen .result-label,.error-screen h2{color:#c52235}.success-screen .result-card{border:2px solid #b9edc9}.success-screen .result-label,.success-screen h2{color:#168d43}
+.secondary-button{margin-top:18px;padding:14px 28px;border:0;border-radius:14px;color:#fff;background:#6810c8;font-weight:900;box-shadow:0 6px 15px #6810c833}
+.loading-track{width:min(280px,100%);height:8px;margin:28px auto 0;overflow:hidden;border-radius:20px;background:#e5f5e9}.loading-track span{display:block;width:40%;height:100%;border-radius:inherit;background:#24b85a;animation:loading 1.5s linear forwards}
+.welcome-card{border:2px solid #f1e5ff;background:radial-gradient(circle at 50% 0,#fff5d4,#fff 52%)}.welcome-medal{font-size:72px;margin-bottom:8px}.welcome-card h2{color:#5010a0}.welcome-phrase{margin:14px auto 30px;max-width:520px;color:#655879;font-size:clamp(18px,3vw,23px);font-weight:800}
+.dashboard-screen .welcome-card{border:2px solid #eee2ff}
+body.state-error .app-shell{background:radial-gradient(circle at center,#fff1f1,#fff8f8 70%)}body.state-success .app-shell{background:radial-gradient(circle at center,#edfff2,#f8fff9 70%)}
+@keyframes pop{0%{opacity:0;transform:scale(.35) rotate(-9deg)}70%{transform:scale(1.12) rotate(3deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes fade-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}@keyframes loading{from{transform:translateX(-110%)}to{transform:translateX(260%)}}
+@media(max-width:850px){.app-shell{padding:26px 18px 45px}.login-layout{grid-template-columns:minmax(0,.8fr) minmax(360px,1.2fr);gap:16px}.teacher-side{min-height:550px}.teacher-avatar{max-height:560px}.login-card{padding:30px 25px 28px}.brand-icon{width:105px}}
+@media(max-width:650px){.app-shell{display:block;padding:18px 14px 36px}.login-layout{display:flex;flex-direction:column;gap:8px}.teacher-side{width:100%;min-height:290px;max-height:340px}.teacher-avatar{height:315px;width:auto;max-width:90%}.teacher-caption{bottom:0}.decor-books{top:10%;left:10%}.decor-star{top:15%;right:10%}.login-card{width:100%;border-radius:26px;padding:25px 20px 24px}.brand-icon{width:92px}h1{font-size:32px}.intro{font-size:13px;margin-bottom:20px}.field{min-height:59px}.field input{font-size:18px}.login-button{min-height:59px;font-size:20px}.book-swoosh{margin-top:18px}.ribbon-top{width:120vw;right:-35vw}.ribbon-bottom{width:120vw}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
